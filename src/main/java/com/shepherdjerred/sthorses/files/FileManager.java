@@ -25,7 +25,6 @@ public class FileManager {
     }
 
     // Load/reload files
-    @SuppressWarnings("deprecation")
     void loadFiles() {
 
         messagesFile = new File(Main.getInstance().getDataFolder(), "messages.yml");
@@ -43,7 +42,7 @@ public class FileManager {
 
             messages.load(messagesFile);
 
-            messages.setDefaults(YamlConfiguration.loadConfiguration(Main.getInstance().getResource("messages.yml")));
+            messages.setDefaults(YamlConfiguration.loadConfiguration(new File("messages.yml")));
             messages.options().copyDefaults(true);
             saveFiles(FileName.MESSAGES);
 
