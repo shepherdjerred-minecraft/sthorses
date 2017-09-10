@@ -41,9 +41,6 @@ public class FileManager {
         try {
 
             messages.load(messagesFile);
-
-            messages.setDefaults(YamlConfiguration.loadConfiguration(new File("messages.yml")));
-            messages.options().copyDefaults(true);
             saveFiles(FileName.MESSAGES);
 
         } catch (Exception e) {
